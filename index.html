@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">0</div>
+      <div class="numbers">
+        <p>
+          <button
+            onclick=" updateCalculation('1');
+    "
+          >
+            1
+          </button>
+
+          <button
+            onclick="
+        updateCalculation('2')
+    "
+          >
+            2
+          </button>
+
+          <button
+            onclick="
+      updateCalculation('3')
+    "
+          >
+            3
+          </button>
+
+          <button
+            onclick="
+    updateCalculation('+')
+    "
+          >
+            +
+          </button>
+        </p>
+        <p>
+          <button
+            onclick="
+   updateCalculation('4')
+    "
+          >
+            4
+          </button>
+          <button
+            onclick="
+       updateCalculation('5')
+  "
+          >
+            5
+          </button>
+          <button
+            onclick="
+        updateCalculation('6')
+"
+          >
+            6
+          </button>
+          <button
+            onclick="
+        updateCalculation('-')
+"
+          >
+            -
+          </button>
+        </p>
+        <p>
+          <button
+            onclick="
+      updateCalculation('7')
+    "
+          >
+            7
+          </button>
+          <button
+            onclick="
+        updateCalculation('8')
+  "
+          >
+            8
+          </button>
+          <button
+            onclick="
+        updateCalculation('9')
+"
+          >
+            9
+          </button>
+          <button
+            onclick="
+        updateCalculation('*')
+"
+          >
+            *
+          </button>
+        </p>
+        <p>
+          <button
+            onclick="
+        updateCalculation('0')
+    "
+          >
+            0
+          </button>
+          <button
+            onclick="
+      updateCalculation('.')
+  "
+          >
+            .
+          </button>
+          <button
+            onclick="
+      updateCalculation('/')
+"
+          >
+            /
+          </button>
+          <button
+            onclick=" 
+// calculation = eval(calculation);
+      calculate();
+"
+          >
+            =
+          </button>
+        </p>
+        <p>
+          <button
+            onclick="
+      //   calculation = '';
+      // console.log('cleared.')
+      clearCalculation();
+      "
+          >
+            A/C
+          </button>
+          <button
+            onclick="
+            display.innerText =
+            display.innerText.slice(0, -1)
+            "
+          >
+            DE
+          </button>
+          <button
+            class="special"
+            onclick="
+          updateCalculation('00')
+          "
+          >
+            00
+          </button>
+        </p>
+      </div>
+    </div>
+    <script>
+      let calculation = "";
+      const display = document.querySelector(".display");
+      function updateCalculation(value) {
+        /*if (calculation === 1) {
+         calculation += "1";
+       } I dont know why this doesn't calculate*/
+        calculation += value;
+        display.textContent = calculation;
+      }
+      function calculate() {
+        calculation = eval(calculation);
+        display.textContent = calculation; // Update the result after performing the calculation
+      }
+
+      function clearCalculation() {
+        calculation = "";
+        display.textContent = calculation; // Update the result after clearing the calculation
+      }
+      // function updateResult() {
+      //   document.getElementById("result").innerText = calculation;
+      // }
+    </script>
+  </body>
+</html>
